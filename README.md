@@ -36,9 +36,9 @@ AZURE_OPENAI_API_VERSION=ENTER_OPENAI_API_VERSION
 
 ```
 cd ENTER_DIR_NAME_HERE
-python -m venv venv              # create a virtual environment
-venv\Scripts\activate            # activate virtual environment
-pip install -r requirements.txt  # install all pip requirements
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
 ```
 
 replace the ENTER_DIR_NAME_HERE with the relevant directory name (`mcp_client`, `weather_server` or `verify_server`)

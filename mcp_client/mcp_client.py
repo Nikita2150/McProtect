@@ -61,11 +61,9 @@ async def run(mcp_servers: List[MCPServer]):
         try:
             result = await Runner.run(agent, history)
             print("Assistant:", result.final_output)
+            history = result.to_input_list()
         except Exception as e:
             print(f"Assistant {str(e)}")
-
-        # Update history for the next turn
-        history = result.to_input_list()
 
 def get_venv_python(project_dir: Path) -> Path:
     scripts_dir = "Scripts" if sys.platform == "win32" else "bin"

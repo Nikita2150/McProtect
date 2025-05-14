@@ -58,8 +58,11 @@ async def run(mcp_servers: List[MCPServer]):
         history.append({"role": "user", "content": user_input})
 
         # Run the agent with the full context
-        result = await Runner.run(agent, history)
-        print("Assistant:", result.final_output)
+        try:
+            result = await Runner.run(agent, history)
+            print("Assistant:", result.final_output)
+        except Exception as e:
+            print(f"Assistant {str(e)}")
 
         # Update history for the next turn
         history = result.to_input_list()
